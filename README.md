@@ -1,4 +1,8 @@
-# http-errors
+# http-errors-es
+
+ESM build of [http-errors](https://www.npmjs.com/package/http-errors) with bundled types.
+
+IMPORTANT: During development tests are conducted on the latest node.js (LST) version it does not mean that this library works only with it, in theory it will work on earlier versions but to check it is not meaningful because the use of versions in production that do not get the security patch is not a good practice.
 
 [![NPM Version][npm-version-image]][npm-url]
 [![NPM Downloads][npm-downloads-image]][node-url]
@@ -21,9 +25,10 @@ $ npm install http-errors
 ## Example
 
 ```js
-var createError = require('http-errors')
-var express = require('express')
-var app = express()
+import createError from 'http-errors'
+import express from 'express'
+
+const app = express()
 
 app.use(function (req, res, next) {
   if (!req.user) return next(createError(401, 'Please login to view this page.'))
@@ -156,14 +161,14 @@ var err = new createError.NotFound()
 
 [MIT](LICENSE)
 
-[ci-image]: https://badgen.net/github/checks/jshttp/http-errors/master?label=ci
-[ci-url]: https://github.com/jshttp/http-errors/actions?query=workflow%3Aci
-[coveralls-image]: https://badgen.net/coveralls/c/github/jshttp/http-errors/master
-[coveralls-url]: https://coveralls.io/r/jshttp/http-errors?branch=master
+[ci-image]: https://badgen.net/github/checks/esm-ts/http-errors-es/master?label=ci
+[ci-url]: https://github.com/esm-ts/http-errors-es/actions?query=workflow%3Aci
+[coveralls-image]: https://badgen.net/coveralls/c/github/esm-ts/http-errors-es/master
+[coveralls-url]: https://coveralls.io/r/esm-ts/http-errors-es?branch=master
 [node-image]: https://badgen.net/npm/node/http-errors
 [node-url]: https://nodejs.org/en/download
-[npm-downloads-image]: https://badgen.net/npm/dm/http-errors
-[npm-url]: https://npmjs.org/package/http-errors
-[npm-version-image]: https://badgen.net/npm/v/http-errors
-[travis-image]: https://badgen.net/travis/jshttp/http-errors/master
-[travis-url]: https://travis-ci.org/jshttp/http-errors
+[npm-downloads-image]: https://badgen.net/npm/dm/http-errors-es
+[npm-url]: https://npmjs.org/package/http-errors-es
+[npm-version-image]: https://badgen.net/npm/v/http-errors-es
+[travis-image]: https://badgen.net/travis/esm-ts/http-errors-es/master
+[travis-url]: https://travis-ci.org/esm-ts/http-errors-es
