@@ -1,0 +1,66 @@
+{
+  "name": "http-errors",
+  "description": "Create HTTP error objects",
+  "version": "2.0.0",
+  "author": "Jonathan Ong <me@jongleberry.com> (http://jongleberry.com)",
+  "contributors": [
+    "Alan Plum <me@pluma.io>",
+    "Douglas Christopher Wilson <doug@somethingdoug.com>",
+    "Evgenii Troinov <troinof@gmail.com>"
+  ],
+  "license": "MIT",
+  "repository": "esm-ts/http-errors-es",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "dependencies": {
+    "depd": "2.0.0",
+    "inherits": "2.0.4",
+    "setprototypeof": "1.2.0",
+    "statuses-es": "2.0.6",
+    "toidentifier": "1.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.11",
+    "@types/depd": "^1.1.36",
+    "@types/inherits": "^0.0.33",
+    "@types/toidentifier": "^1.0.2",
+    "tsup": "^8.1.1",
+    "tsx": "^4.16.2",
+    "nyc": "15.1.0",
+    "snazzy": "^9.0.0",
+    "ts-standard": "^12.0.2",
+    "typescript": "^5.5.3"
+  },
+  "engines": {
+    "node": ">= 18"
+  },
+  "scripts": {
+    "lint": "ts-standard . | snazzy",
+    "test": "node --import tsx --test src/**/*.test.ts",
+    "build": "tsup",
+    "test:ci": "nyc --reporter=lcov --reporter=text npm test",
+    "test:cov": "nyc --reporter=html --reporter=text npm test",
+    "version": "node scripts/version-history.js && git add HISTORY.md"
+  },
+  "ts-standard": {
+    "project": "./tsconfig.json"
+  },
+  "keywords": [
+    "http",
+    "error"
+  ],
+  "files": [
+    "index.js",
+    "HISTORY.md",
+    "LICENSE",
+    "README.md"
+  ]
+}
